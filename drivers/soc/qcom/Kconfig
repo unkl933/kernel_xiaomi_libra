@@ -650,6 +650,13 @@ config KERNEL_TEXT_MPU_PROT
 	  sections early in boot. Read access is permitted to
 	  all masters; Write access is only permited to the
 	  secure world.
+	  
+config BRICKED_HOTPLUG
+	bool "Enable kernel based mpdecision"
+	depends on MSM_RUN_QUEUE_STATS
+	default y
+	help
+	 This enables kernel based multi core control.
 
 config SERIAL_NUM
 	bool "Enable Serial Number Proc Interface"
