@@ -387,6 +387,27 @@ KBUILD_AFLAGS_MODULE  := -DMODULE
 KBUILD_CFLAGS_MODULE  := -DMODULE
 KBUILD_LDFLAGS_MODULE := -T $(srctree)/scripts/module-common.lds
 
+# Disable not-so-important warnings
+KBUILD_CFLAGS += \
+		-Wno-address-of-packed-member \
+		-Wno-attribute-alias \
+		-Wno-discarded-array-qualifiers \
+		-Wno-format-overflow \
+		-Wno-format-security \
+		-Wno-format-truncation \
+		-Wno-implicit-function-declaration \
+		-Wno-incompatible-pointer-types \
+		-Wno-int-conversion \
+		-Wno-maybe-uninitialized \
+		-Wno-packed-not-aligned \
+		-Wno-psabi \
+		-Wno-restrict \
+		-Wno-shift-overflow \
+		-Wno-stringop-overflow \
+		-Wno-stringop-truncation \
+		-Wno-trigraphs \
+		-Wno-unused-const-variable
+
 # Read KERNELRELEASE from include/config/kernel.release (if it exists)
 KERNELRELEASE = $(shell cat include/config/kernel.release 2> /dev/null)
 KERNELVERSION = $(VERSION)$(if $(PATCHLEVEL),.$(PATCHLEVEL)$(if $(SUBLEVEL),.$(SUBLEVEL)))$(EXTRAVERSION)
