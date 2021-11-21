@@ -28,11 +28,11 @@
 #define CPU_MASK(cpu) (1U << (cpu))
 
 /*
- * For MSM8996 (big.LITTLE). CPU0 and CPU1 are LITTLE CPUs; CPU2 and CPU3 are
+ * For MSM8992 (big.LITTLE). CPU0 and CPU1 are LITTLE CPUs; CPU2 and CPU3 are
  * big CPUs.
  */
 #define LITTLE_CPU_MASK (CPU_MASK(0) | CPU_MASK(1) | CPU_MASK(2) | CPU_MASK(3))
-#define BIG_CPU_MASK    (CPU_MASK(4) | CPU_MASK(5) | CPU_MASK(6) | CPU_MASK(7))
+#define BIG_CPU_MASK    (CPU_MASK(4) | CPU_MASK(5))
 
 #define UNTHROTTLE_ZONE (-1)
 
